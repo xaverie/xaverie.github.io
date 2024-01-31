@@ -1,0 +1,160 @@
+/* Reset some default styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    background-image: linear-gradient(#f2f2f2, #e5d38c);
+    min-height: 100%;
+}
+
+/* Center the main element horizontally and center the content vertically */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the content horizontally */
+    justify-content: center;
+    /* Center the content vertically */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    display: inline-flex;
+    gap: 30px;
+    max-width: 1200px;
+    /* Add a maximum width to prevent content from spreading too wide */
+}
+
+.container-fluid {
+    position: relative;
+    background-color: #B68D40;
+    height: 500px;
+    /* Allow the container to adjust its height based on content */
+    width: 290px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+/* Hide scrollbars in WebKit-based browsers */
+.menu-container::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Hide scrollbar track in WebKit-based browsers */
+.menu-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Style scrollbar thumb in WebKit-based browsers (optional) */
+.menu-container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+/* Hide scrollbars in Firefox and other browsers that support scrollbar-width and scrollbar-color */
+.menu-container {
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+/* The following CSS is used for styling the scroll thumb in Firefox (optional) */
+.menu-container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.menu-container {
+    width: 1100px !important;
+    /* background-color: #333; */
+    overflow-x: auto;
+    /* Add horizontal scroll for overflow */
+    /* overflow: hidden; */
+    white-space: nowrap;
+    /* Prevent line breaks */
+    padding: 1.5rem;
+}
+
+li {
+    margin-right: 1002px;
+    color: black;
+}
+
+/* Center and style the image */
+img {
+    display: block;
+    margin: 0 auto;
+    height: 104px;
+    width: 104px;
+    max-width: 100%;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button Container Styles */
+.button-container {
+    text-align: center;
+}
+
+/* Button Styles */
+button {
+    margin-top: 170px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 22px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+}
+
+.done-button {
+    background-color: #28a745;
+    position: absolute;
+    bottom: 10px;
+    /* Adjust the distance from the bottom as needed */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Center horizontally */
+}
+
+/* Responsive styles for tablet screens */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        margin: 1px 1px;
+        padding: 1px 1px;
+        font-size: 15px;
+    }
+
+    .menu-container {
+        width: 750px !important;
+        padding: 1rem;
+    }
+
+    .container-fluid {
+        height: 450px;
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    button {
+        margin-top: 20px;
+        /* Adjust the margin for smaller screens */
+    }
+
+    .done-button {
+        bottom: 5px;
+        /* Adjust the distance from the bottom for smaller screens */
+    }
+}

@@ -1,0 +1,108 @@
+@media only screen and (max-width: 768px) {
+   body {
+       font-size: 19px;
+       /* Adjust the base font size for smaller screens */
+   }
+
+   .shopping-cart table {
+       width: 100%;
+       /* Make the table full-width on smaller screens */
+       margin-bottom: 1.5rem;
+       /* Add spacing below the table */
+   }
+
+   .shopping-cart table thead th,
+   .shopping-cart table tr td {
+       font-size: 1.6rem;
+       /* Adjust as needed for smaller screens */
+       padding: 1rem;
+       /* Add padding to table cells for better spacing */
+   }
+
+   .shopping-cart table input[type="number"],
+   .shopping-cart table input[type="submit"] {
+       width: 100%;
+       /* Make input fields and submit button full-width on smaller screens */
+       padding: 0.7rem;
+       /* Adjust padding for better touch interaction */
+       font-size: 1.6rem;
+       /* Adjust font size for smaller screens */
+   }
+
+   .box-container {
+       flex-direction: column;
+       /* Stack boxes vertically on smaller screens */
+   }
+
+   .products .box-container .box {
+       width: calc(100% - 1rem);
+       /* Make boxes full-width and consider margin on smaller screens */
+       margin-bottom: 1rem;
+       /* Add spacing between stacked boxes */
+       padding: 1.5rem;
+       /* Add padding to boxes for better spacing */
+       box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+       /* Add subtle box shadow for better visual separation */
+   }
+
+   .carousel {
+       max-width: 100%;
+       /* Make the carousel full-width on smaller screens */
+   }
+
+   .checkout-form form .flex .inputBox {
+       flex: 1 1 100%;
+       /* Make the input boxes full-width on smaller screens */
+   }
+
+   .order-message-container .message-container {
+       width: calc(100% - 2rem);
+       /* Make the message container full-width with margin consideration */
+   }
+
+   .display-order span {
+       margin: 0.5rem;
+       /* Adjust spacing for order summary spans */
+   }
+
+   .quantity-row {
+       flex-direction: column;
+       /* Stack quantity rows vertically for better spacing */
+   }
+
+   .quantity-input input {
+       width: 100%;
+       /* Make quantity input full-width */
+       margin-top: 0.5rem;
+       /* Adjust spacing between quantity input and buttons */
+   }
+
+   .checkout-btn {
+       text-align: center;
+       margin-top: 1rem;
+       
+   }
+
+   .checkout-btn a {
+       display: block;
+       width: 100%;
+
+   }
+
+   .checkout-btn a.disabled {
+       pointer-events: none;
+       opacity: .5;
+       user-select: none;
+   }
+
+   .heading {
+       text-align: center !important;
+   }
+   
+   .sample {
+    margin-left: -25% !important;
+    width: 150% !important;
+   }
+
+
+}

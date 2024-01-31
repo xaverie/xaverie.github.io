@@ -1,0 +1,45 @@
+<?php
+// Include your database connection or any necessary PHP code here
+@include 'connection.php';
+
+$message = array();
+
+if (isset($_POST['add_to_cart'])) {
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['quantity'];
+    $main_ingredient = ''; // Initialize the main ingredient variable
+
+    // Fetch main ingredient from the menu table
+    $main_ingredient_query = mysqli_query($conn, "SELECT mainIngredient FROM `menu` WHERE Name = '$product_name'");
+    $main_ingredient_result = mysqli_fetch_assoc($main_ingredient_query);
+
+    if ($main_ingredient_result) {
+        $main_ingredient = $main_ingredient_result['mainIngredient'];
+
+        // Sanitize the ingredient name to prevent SQL injection
+        $safeIngredient = mysqli_real_escape_string($conn, $main_ingredient);
+
+        // Insert the product into the cart table
+        $insert_product = mysqli_query($conn, "INSERT INTO `cart`(name, price, image, quantity, MainIngredient, Ingredient) VALUES('$product_name', '$product_price', '$product_image', '$product_quantity', '$main_ingredient', '$safeIngredient')");
+
+        if ($insert_product) {
+            $message[] = 'Product added to cart successfully';
+
+            // Update the inventory after successful insertion into the cart
+            updateInventory($conn, $safeIngredient, $product_quantity);
+        } else {
+            $message[] = 'Failed to add product to cart';
+        }
+    }
+}
+
+// Function to update inventory
+function updateInventory($conn, $ingredient, $product_quantity) {
+    // Use backticks to handle ingredient names with spaces
+    $updateQuery = "UPDATE `inventory` SET `Serving` = `Serving` - $product_quantity WHERE `IngridientName` = '$ingredient'";
+
+    mysqli_query($conn, $updateQuery);
+}
+?>

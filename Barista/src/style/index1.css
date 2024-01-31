@@ -1,0 +1,59 @@
+/* Responsive Styles for Small Mobile Devices (e.g., 425px) */
+@media screen and (max-width: 425px) {
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 17px;
+        background-image: linear-gradient(#f2f2f2, #e5d38c);
+        min-height: 100%;
+    }
+
+    main {
+        padding: 10px;
+        /* Adjust main content padding for smaller screens */
+    }
+
+    .container-fluid {
+        height: 500px;
+        width: 358px;
+        /* Make the order containers take up the full width */
+        margin-bottom: 10px;
+        /* Adjust margin for smaller screens */
+    }
+
+    .menu-container {
+        width: 380px !important;
+        /* Allow the menu container to adjust to the content */
+        padding: 1rem;
+        /* Adjust padding for smaller screens */
+    }
+
+    .button-container {
+        text-align: center;
+    }
+
+    button {
+        margin-top: 10px;
+        /* Adjust the margin for smaller screens */
+        width: 40%;
+        /* Adjust button width for smaller screens */
+        margin-right: 16px;
+        white-space: nowrap;
+    }
+
+    .done-button {
+        bottom: 5px;
+        /* Adjust the distance from the bottom for smaller screens */
+    }
+
+    img {
+        height: 80px; /* Adjust image height for smaller screens */
+        width: 80px; /* Adjust image width for smaller screens */
+        /* max-width: 100%; */
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+    }
+}
